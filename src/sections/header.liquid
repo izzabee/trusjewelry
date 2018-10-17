@@ -1,0 +1,90 @@
+<header role="banner" class="site-header">
+  {% if template.name == 'index' %}
+    <h1>
+  {% else %}
+    <div class="h1">
+  {% endif %}
+      <a href="/" class="logo-image">
+        {% include 'logo' %}
+      </a>
+  {% if template.name == 'index' %}
+    </h1>
+  {% else %}
+    </div>
+  {% endif %}
+
+  <button class="btn--reset nav-toggle"></button>
+</header>
+
+<nav role="navigation" class="site-nav">
+  <ul class="list--reset">
+    <li>
+      <a href="/cart" class="link--icon link--icon-text link--cart">
+        {% include 'icon-cart' %}
+        <span class="link--icon__text type--small">
+          {{ 'layout.cart.title' | t }}
+          ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
+        </span>
+      </a>
+    </li>
+    {% if shop.customer_accounts_enabled %}
+      <li>
+        <ul>
+          {% if customer %}
+            <li>
+              {% if customer.first_name != blank %}
+                {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+                {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+              {% else %}
+                <a href="/account">{{ 'layout.customer.account' | t }}</a>
+              {% endif %}
+            </li>
+            <li>
+              {{ 'layout.customer.log_out' | t | customer_logout_link }}
+            </li>
+          {% else %}
+            <li>
+              {{ 'layout.customer.log_in' | t | customer_login_link }}
+            </li>
+            <li>
+              {{ 'layout.customer.create_account' | t | customer_register_link }}
+            </li>
+          {% endif %}
+        </ul>
+      </li>
+    {% endif %}
+    <li class="form-reveal">
+      {% comment %}
+      <button class="btn--reset">{% include 'icon-search' %}</button>
+      {% endcomment %}
+      {% include 'search-form' %}
+    </li>
+  </ul>
+  <ul class="list--reset">
+    {% for link in linklists[section.settings.menu].links %}
+      {% if link.links != blank %}
+        <li>
+          <a href="{{ link.url }}">
+            {{ link.title }}
+            {% include 'icon-arrow-down' %}
+          </a>
+          <ul>
+            {% for childlink in link.links %}
+              <li>
+                <a href="{{ childlink.url }}">
+                  {{ childlink.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

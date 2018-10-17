@@ -1,0 +1,87 @@
+// Form styles
+// --------------------------------------------------
+
+form {
+  text-align: left;
+  width: 100%;
+
+  input {
+    border: 1px solid $black;
+    color: $black;
+    font-family: $sanserif;
+    font-weight: 300;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  label {
+    font-weight: 300;
+  }
+}
+
+.form--small {
+  max-width: 700px;
+  width: auto;
+}
+
+input[type="number"] {
+  max-width: 100px;
+  width: auto;
+}
+
+select {
+  appearance: none;
+  background-color: $white;
+  background-image: url('//cdn.shopify.com/s/files/1/2163/9575/t/1/assets/ico-select.svg');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  border: 1px solid $black;
+  color: $black;
+  cursor: pointer;
+  display: block;
+  line-height: 1.2;
+  padding-right: 28px;
+  padding: 10px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  width: 50%;
+}
+
+.contact-form {
+  h4 { margin: 0; }
+}
+
+.product-form {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.product-form__item {
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 50%;
+
+  label {
+    display: block;
+    padding: 5px 0;
+  }
+
+  select {
+    display: block;
+    width: 100%;
+  }
+}
+
+.contact-form,
+.storefront-password-form,
+.form--search {
+  display: flex;
+
+  input { border: 1px solid $black; }
+  button {
+    margin: 0 5px;
+  }
+}

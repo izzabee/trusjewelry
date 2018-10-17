@@ -1,0 +1,145 @@
+// Type styles
+// --------------------------------------------------
+
+body {
+  font-family: $sanserif;
+}
+
+a {
+  color: $white;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+p {
+  @extend .type--body;
+}
+
+.link--inline {
+  text-decoration: underline;
+  transition: color 0.3s;
+
+  a {
+    transition: color 0.3s;
+  }
+
+  &:hover {
+    color: $black;
+
+    a { color: $black; }
+  }
+}
+
+.link--icon {
+  display: block;
+
+  svg {
+    max-width: 30px;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.link--icon-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link--icon__text {
+  display: block;
+}
+
+.link--cart {
+  &:hover {
+    // svg { transform: rotate(90deg); }
+  }
+}
+
+.type--heavy {
+  font-weight: 800;
+}
+
+.type--thin {
+  font-weight: 100;
+}
+
+.type--xl {
+  font-size: 5rem;
+  @include breakpoint(md) {
+    font-size: 8rem;
+  }
+  @include breakpoint(lg) {
+    font-size: 10rem;
+  }
+}
+
+.type--header {
+  color: $white;
+  font-family: $sanserif;
+  font-size: 2.75rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 3rem;
+  text-transform: uppercase;
+
+  @include breakpoint(md) {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+.type--small {
+  font-size: 0.75rem;
+}
+
+.type--body {
+  font-family: $sanserif;
+  font-size: 1rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5rem;
+
+  @include breakpoint(md) {
+    line-height: 1.6rem;
+  }
+}
+
+.type--subheader {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.type--white  { color: $white; }
+
+.type--uppercase { text-transform: uppercase; }
+.type--lowercase { text-transform: none; }
+.type--italic { font-style: italic; }
+
+.type--center { text-align: center; }
+.type--right { text-align: right; }
+.type--left { text-align: left; }
+
+h1, h2, h3 {
+  @extend .type--header;
+}
+
+h4, h5 {
+  @extend .type--header;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+
+  @include breakpoint(md) {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+}
+
+.list--flex {
+  display: flex;
+
+  li { margin-right: 5px; }
+}

@@ -1,0 +1,249 @@
+// Import fonts
+// --------------------------------------------------
+
+body {
+  background-color: $pink;
+  color: $white;
+  margin: 15px;
+  padding: 0;
+  height: calc(100vh - 30px);
+  overflow: hidden;
+
+  @include breakpoint(md) {
+    margin: 30px;
+    height: calc(100vh - 60px);
+  }
+}
+
+.body-wrap {
+  overflow: auto;
+}
+
+.content {
+  background-color: $peach;
+  height: calc(100vh - 30px);
+  overflow: auto;
+  padding: calc(1rem + 55px) 0 1rem;
+
+  @include breakpoint(md) {
+    height: calc(100vh - 60px);
+    padding: calc(1rem + 65px) 1rem 1rem;
+  }
+}
+
+.social-sharing {
+  display: flex;
+  max-width: 100px;
+
+  li {
+    margin-right: 0.5rem;
+  }
+}
+
+.center-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+
+  .grid--half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    &:last-child {
+      .content-wrap {
+        opacity: 0;
+        transition: opacity 0.6s 0.8s;
+      }
+
+      &:before {
+        background-color: $white;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: 100%;
+      }
+
+      @include breakpoint(md) {
+        &:before {
+          background-color: $white;
+          content: '';
+          height: 0;
+          left: 0;
+          position: absolute;
+          transition: height 0.6s;
+          top: auto;
+          width: 1px;
+        }
+      }
+    }
+
+    &.in { .content-wrap { opacity: 1; } }
+
+    @include breakpoint(md) {
+      &.in {
+        &:last-child:before { height: 66%; }
+      }
+    }
+  }
+}
+
+.content__bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .content-wrap {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    width: 80%;
+  }
+
+  @include breakpoint(md) {
+    .content-wrap {
+      width: 50%;
+    }
+  }
+}
+
+.content--pad {
+  padding: 50px 0;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include breakpoint(md) {
+    &--row {
+      flex-direction: row;
+    }
+  }
+}
+
+.grid--half {
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 50%;
+  }
+}
+
+.grid--30 {
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 30%;
+  }
+}
+
+.grid--70 {
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 70%;
+  }
+}
+
+.breadcrumbs {
+  margin: 2rem 0;
+  padding: 1rem 0;
+
+  span {
+    padding: 10px 0;
+  }
+
+  @include breakpoint(md) {
+    margin: 2rem 0;
+    padding: 1rem 5rem;
+
+    span { padding: 10px 5px; }
+  }
+}
+
+// Homepage
+.homepage {
+  flex-direction: column-reverse;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .grid--half:last-child .content-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @include breakpoint(md) {
+    flex-direction: row;
+
+    .grid--half:last-child {
+      align-items: flex-end;
+
+      .content-wrap { display: block; }
+    }
+  }
+
+  .grid--half:first-child {
+    .content-wrap { padding-right: 30px; }
+  }
+
+  .grid--half {
+    p {
+      max-width: 400px;
+
+      &.type--right {
+        margin-left: auto;
+        padding-right: 3px;
+      }
+    }
+  }
+}
+
+.image-wrap {
+  margin: 0;
+
+  img {
+    display: block;
+    filter: grayscale(100%);
+    margin: 0 auto;
+    mix-blend-mode: multiply;
+    width: 70%;
+  }
+}
+
+.insta-feed {
+  @include breakpoint(md) {
+    padding: 30px 0;
+  }
+}
+
+.instafeed-container {
+  img {
+    mix-blend-mode: multiply;
+  }
+}
+
+// Password page
+.password-page {
+  .content-wrap {
+    margin: 0 auto;
+    width: 80%;
+
+    div, ul { margin: 0 auto; }
+  }
+}
+
+// Search page
+.search__top {
+  margin: 0 auto;
+}

@@ -1,0 +1,40 @@
+{% paginate collection.products by 12 %}
+  <header role="banner">
+    {% if collection.description != blank %}
+      <h1>{{ collection.title }}</h1>
+      <div class="rte">
+        {{ collection.description }}
+      </div>
+    {% endif %}
+
+    <div class="breadcrumbs">
+      <span class="type--thin">Collections</span>
+      <span class="type--thin">/</span>
+      <span>{{ collection.title }}</span>
+    </div>
+
+    {% comment %}
+      {% if collection.all_tags.size > 0 %}
+        <ul>
+          {% for tag in collection.all_tags %}
+            {% if current_tags contains tag %}
+              <li class="active">
+                {{ tag | link_to_remove_tag: tag }}
+              </li>
+            {% else %}
+              <li>
+                {{ tag | link_to_tag: tag }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endcomment %}
+  </header>
+
+  {% section 'collection-list' %}
+
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+{% endpaginate %}

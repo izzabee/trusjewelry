@@ -1,0 +1,24 @@
+// Helper classes
+// --------------------------------------------------
+
+.hidden-mobile {
+  display: none !important;
+  @include breakpoint(md) {
+    display: block !important;
+  }
+}
+
+.hidden-desktop {
+  display: block !important;
+  @include breakpoint(md) {
+    display: none !important;
+  }
+}
+
+.visually-hidden {
+  visibility: hidden;
+}
+
+.is-hidden {
+  display: none;
+}

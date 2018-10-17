@@ -1,0 +1,54 @@
+// Button styles
+// --------------------------------------------------
+
+.button {
+  @extend .btn--reset;
+  // border: 1px solid white;
+  // color: $white;
+
+  background-color: $white;
+  border: 1px solid $black;
+  color: $black;
+
+  font-family: $sanserif;
+  font-weight: 300;
+  margin: 5px 0;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  white-space: nowrap;
+
+  svg {
+    * { transition: fill 0.3s; }
+  }
+
+  &:hover {
+    background-color: transparent;
+    border-color: $white;
+    color: $white;
+    cursor: pointer;
+
+    svg {
+      * { fill: $white; }
+    }
+  }
+}
+
+.button--invert {
+  background-color: $peach;
+  border: 1px solid $white;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    border: 1px solid $black;
+    color: $black;
+  }
+}
+
+
+button[type="submit"] {
+  .icon-fallback-text {
+    text-indent: -999rem;
+  }
+}

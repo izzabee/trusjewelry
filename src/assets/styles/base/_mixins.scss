@@ -1,0 +1,52 @@
+// --------------------------------------------------
+// Responsive Breakpoints
+// --------------------------------------------------
+$breakpoints: (
+  'xs' : ( min-width:  $break-xs  ),
+  'sm' : ( min-width:  $break-sm  ),
+  'md' : ( min-width:  $break-md  ),
+  'lg' : ( min-width:  $break-lg  ),
+  'xl' : ( min-width:  $break-xl  )
+);
+
+@mixin breakpoint($name) {
+  @media #{inspect(map-get($breakpoints, $name))} {
+    @content;
+  }
+}
+
+// --------------------------------------------------
+// Rem Calculator
+// --------------------------------------------------
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 10) + rem;
+}
+
+// --------------------------------------------------
+// Fonts
+// --------------------------------------------------
+@mixin declare-font-face(
+  $font-family,
+  $font-filename-eot,
+  $font-filename-woff2,
+  $font-filename-woff,
+  $font-filename-ttf,
+  $font-filename-svg,
+  $font-weight : normal,
+  $font-style : normal,
+  $font-stretch : normal
+){
+  @font-face {
+    font-family: "#{$font-family}";
+    src: font-url("#{$font-filename-eot}.eot?#iefix");
+    src: font-url("#{$font-filename-eot}.eot?#iefix") format("eot"),
+         font-url("#{$font-filename-woff2}.woff2") format("woff2"),
+         font-url("#{$font-filename-woff}.woff") format("woff"),
+         font-url("#{$font-filename-ttf}.ttf") format("truetype"),
+         font-url("#{$font-filename-svg}.svg##{$font-filename-svg}") format("svg");
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+    font-weight: $font-weight;
+  }
+}

@@ -1,0 +1,22 @@
+// Resets
+// --------------------------------------------------
+
+.btn--reset {
+  background: none;
+  border: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+.list--reset {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.link--reset {}
+
+img, a, button, select, input {
+  outline: none;
+}

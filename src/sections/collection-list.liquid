@@ -1,0 +1,49 @@
+<ul class="list--reset collection-list">
+  {% for product in collection.products %}
+    <li>
+      <a href="{{ product.url | within: collection }}" class="grid grid--row">
+        <div class="grid--half collection-list__img">
+          {% if product.featured_image != blank %}
+            {% include 'responsive-image' with
+              image: product.featured_image,
+              max_width: 700,
+              max_height: 800,
+              wrapper_class: 'hover-img top'
+            %}
+            {% include 'responsive-image' with
+              image: product.featured_image,
+              max_width: 700,
+              max_height: 800,
+              wrapper_class: 'hover-img bottom'
+            %}
+          {% endif %}
+        </div>
+
+        <div class="grid--half collection-list__name">
+          <h4>{{ product.title }}</h4>
+        </div>
+      </a>
+    </li>
+
+  {% else %}
+    {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
+      {% for i in (1..8) %}
+        <a href="#">
+          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+          {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
+        </a>
+
+        <p>
+          <a href="#">{{ 'homepage.onboarding.product_title' | t }}</a>
+        </p>
+
+        <p>
+          {{ 1999 | money }}
+        </p>
+      {% endfor %}
+    {% else %}
+      <p>{{ 'collections.general.no_matches' | t }}</p>
+    {% endif %}
+
+  {% endfor %}
+</ul>

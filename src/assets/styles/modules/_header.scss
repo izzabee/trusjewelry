@@ -1,0 +1,182 @@
+// Header styles
+// --------------------------------------------------
+
+.site-header {
+  align-items: center;
+  background-color: $peach;
+  display: flex;
+  height: $navHeight;
+  justify-content: space-between;
+  left: 15px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+
+  @include breakpoint(md) {
+    left: 30px;
+    right: 30px;
+    top: 30px;
+  }
+}
+
+
+#shopify-section-header {
+  height: 0;
+  overflow: hidden;
+}
+
+.site-header--right {
+  display: flex;
+  margin: 0;
+
+  li { margin-right: 10px; }
+}
+
+.logo-image {
+  display: block;
+  left: 10px;
+  position: absolute;
+  top: 5px;
+  width: 100px;
+  z-index: 9;
+
+  svg {
+    height: auto;
+    width: 100%;
+  }
+
+  @include breakpoint(md) {
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+  }
+}
+
+.nav-toggle {
+  height: 30px;
+  margin-right: 5px;
+  position: fixed;
+  top: 25px;
+  right: 20px;
+  transition: all 0.3s;
+  width: 35px;
+  z-index: 10;
+
+  @include breakpoint(md) {
+    top: 45px;
+    right: 40px;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &:after {
+      left: -5px;
+      right: -5px;
+    }
+  }
+
+  &:before {
+    border-bottom: 1px solid $white;
+    border-top: 1px solid $white;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    // transition: transform 0.3s;
+  }
+
+  &:after {
+    border-bottom: 1px solid $white;
+    bottom: calc(50% - 1px);
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    transition: all 0.3s;
+  }
+}
+
+.is-open {
+  .nav-toggle {
+    transform: rotate(45deg);
+
+    &:hover {
+      &:after {
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &:before {
+      border-top: 0;
+      height: 50%;
+    }
+
+    &:after {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.site-nav {
+  background-color: $pink;
+  bottom: 0;
+  padding: 30px 2rem;
+  position: fixed;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+
+  li {
+    margin: 50px 0;
+  }
+
+  @include breakpoint(md) {
+    width: 50%;
+  }
+
+  @include breakpoint(lg) {
+    width: 40%;
+  }
+
+  &.is-open {
+    transform: translateX(0);
+  }
+}
+
+// .form-reveal {
+//   height: 20px;
+//   margin: 0;
+//   overflow: hidden;
+//   position: relative;
+//   transition: width 0.6s;
+//   width: 20px;
+
+//   svg {
+//     opacity: 1;
+//     transition: opacity 0.3s;
+//   }
+
+//   form {
+//     min-width: 350px;
+//     position: absolute;
+//     right: 0;
+//   }
+// }
+
+// .is-open {
+//   .form-reveal {
+//     height: $navHeight;
+//     width: 350px;
+
+//     svg { opacity: 0; }
+
+//     form { height: $navHeight; }
+//   }
+// }

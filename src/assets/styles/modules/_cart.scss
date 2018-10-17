@@ -1,0 +1,56 @@
+// Cart styles
+// --------------------------------------------------
+
+.cart {
+  padding: 0 1rem;
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+.form--cart {
+  max-width: 80%;
+  margin: 0 auto;
+
+  .responsive-table {
+    border-bottom: 1px solid $white;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .responsive-table-row {
+    border-top: 1px solid $white;
+
+    td {
+      font-weight: 300;
+      padding: 30px 0;
+    }
+  }
+}
+
+.cart__head {
+  width: 100%;
+
+  th {
+    font-weight: 300;
+    padding: 20px 0;
+  }
+}
+
+.cart__prod-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+}
+
+.cart__summary {
+  margin-left: auto;
+  text-align: right;
+  width: 30%;
+
+  .grid--half.button {
+    margin-right: 5px;
+  }
+}
