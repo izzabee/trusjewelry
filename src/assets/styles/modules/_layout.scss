@@ -2,16 +2,18 @@
 // --------------------------------------------------
 
 body {
-  background-color: $pink;
+  background-color: $peach;
   color: $white;
-  margin: 15px;
-  padding: 0;
-  height: calc(100vh - 30px);
-  overflow: hidden;
+  // margin: 15px;
+  padding: 15px;
+  position: relative;
+  min-height: calc(100vh - 30px);
+  // overflow: hidden;
 
   @include breakpoint(md) {
-    margin: 30px;
-    height: calc(100vh - 60px);
+    // margin: 30px;
+    padding: 30px;
+    min-height: calc(100vh - 60px);
   }
 }
 
@@ -20,14 +22,14 @@ body {
 }
 
 .content {
-  background-color: $peach;
-  height: calc(100vh - 30px);
-  overflow: auto;
+  // background-color: $peach;
+  // height: calc(100vh - 30px);
+  // overflow: auto;
   padding: calc(1rem + 55px) 0 1rem;
 
   @include breakpoint(md) {
-    height: calc(100vh - 60px);
-    padding: calc(1rem + 65px) 1rem 1rem;
+    // height: calc(100vh - 60px);
+    padding: $navHeight 1rem 1rem;
   }
 }
 
@@ -37,6 +39,12 @@ body {
 
   li {
     margin-right: 0.5rem;
+  }
+
+  svg * { transition: fill 0.3s; }
+
+  a {
+    &:hover { svg * { fill: $black; } }
   }
 }
 
@@ -54,7 +62,7 @@ body {
     justify-content: center;
     position: relative;
 
-    &:last-child {
+    &:nth-child(even) {
       .content-wrap {
         opacity: 0;
         transition: opacity 0.6s 0.8s;
@@ -65,6 +73,7 @@ body {
         content: '';
         height: 1px;
         left: 0;
+        opacity: 0;
         position: absolute;
         right: 0;
         top: 100%;
@@ -77,6 +86,7 @@ body {
           content: '';
           height: 0;
           left: 0;
+          opacity: 1;
           position: absolute;
           transition: height 0.6s;
           top: auto;
@@ -102,7 +112,7 @@ body {
 
   .content-wrap {
     margin: 0 auto;
-    padding-bottom: 30px;
+    padding: 30px 0;
     width: 80%;
   }
 
@@ -114,7 +124,10 @@ body {
 }
 
 .content--pad {
-  padding: 50px 0;
+  padding: 30px 0;
+  @include breakpoint(md) {
+    padding: 50px 0;
+  }
 }
 
 .grid {
@@ -138,21 +151,39 @@ body {
   }
 }
 
-.grid--30 {
-  height: 100%;
-  width: 100%;
-
-  @include breakpoint(md) {
-    width: 30%;
-  }
-}
-
 .grid--70 {
   height: 100%;
   width: 100%;
 
   @include breakpoint(md) {
     width: 70%;
+  }
+}
+
+.grid--60 {
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 60%;
+  }
+}
+
+.grid--40 {
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 40%;
+  }
+}
+
+.grid--30 {
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 30%;
   }
 }
 
@@ -177,14 +208,20 @@ body {
   flex-direction: column-reverse;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 30px;
 
   .grid--half:last-child .content-wrap {
     display: flex;
     flex-direction: column-reverse;
   }
 
+  .type--right { text-align: left; }
+
   @include breakpoint(md) {
     flex-direction: row;
+    padding-bottom: 50px;
+
+    .type--right { text-align: right; }
 
     .grid--half:last-child {
       align-items: flex-end;
@@ -193,8 +230,10 @@ body {
     }
   }
 
-  .grid--half:first-child {
-    .content-wrap { padding-right: 30px; }
+  @include breakpoint(md) {
+    .grid--half:first-child {
+      .content-wrap { padding-right: 30px; }
+    }
   }
 
   .grid--half {
@@ -209,15 +248,27 @@ body {
   }
 }
 
+.contact {
+  .type--right { text-align: center; }
+  @include breakpoint(md) {
+    .type--right { text-align: right; }
+  }
+}
+
 .image-wrap {
   margin: 0;
 
   img {
     display: block;
     filter: grayscale(100%);
-    margin: 0 auto;
+    margin: 30px auto 0;
     mix-blend-mode: multiply;
+    -webkit-mix-blend-mode: multiply;
     width: 70%;
+  }
+
+  @include breakpoint(md) {
+    img { margin: 0; }
   }
 }
 

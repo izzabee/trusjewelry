@@ -5,6 +5,7 @@ form {
   text-align: left;
   width: 100%;
 
+  textarea,
   input {
     border: 1px solid $black;
     color: $black;
@@ -83,5 +84,21 @@ select {
   input { border: 1px solid $black; }
   button {
     margin: 0 5px;
+  }
+}
+
+.contact-form {
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+
+  input, textarea { padding: 1rem; }
+  label { display: none; }
+
+  .grid { margin-bottom: 1rem; }
+
+  @include breakpoint(md) {
+    .grid--half { padding-right: 1rem; }
   }
 }

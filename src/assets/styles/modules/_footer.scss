@@ -1,5 +1,22 @@
-
 footer {
+  align-items: center;
   bottom: 5px;
-  position: absolute;
+  display: flex;
+  height: 50px;
+  // position: absolute;
+  width: 100%;
+}
+
+.footer__left {
+  width: 80%;
+}
+.footer__right {
+  width: 20%;
+
+  .social-sharing {
+    margin: 0;
+    margin-left: auto;
+
+    li { padding-right: 10px;}
+  }
 }

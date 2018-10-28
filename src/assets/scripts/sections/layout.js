@@ -1,12 +1,18 @@
+import {
+  addClass,
+  removeClass
+} from '../modules/helpers'
+
 const els = {}
 
 const cacheEls = () => {
   els.main = document.querySelector('.center-content')
-  els.section = document.querySelector('.js-line')
+  els.section = document.querySelectorAll('.js-line')
 }
 
-animateLine = () => {
-  els.section.classList.add('in')
+const animateLine = () => {
+  console.log(els.section)
+  addClass(els.section, 'in')
 }
 
 const initLine = () => {

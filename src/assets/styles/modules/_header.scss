@@ -7,15 +7,15 @@
   display: flex;
   height: $navHeight;
   justify-content: space-between;
-  left: 15px;
+  left: 5px;
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 5px;
+  top: 5px;
 
   @include breakpoint(md) {
-    left: 30px;
-    right: 30px;
-    top: 30px;
+    left: 15px;
+    right: 15px;
+    top: 15px;
   }
 }
 
@@ -35,8 +35,8 @@
 .logo-image {
   display: block;
   left: 10px;
-  position: absolute;
-  top: 5px;
+  position: fixed;
+  top: 10px;
   width: 100px;
   z-index: 9;
 
@@ -48,7 +48,9 @@
   @include breakpoint(md) {
     left: 0;
     margin: 0 auto;
+    position: absolute;
     right: 0;
+    top: 5px;
   }
 }
 
@@ -124,7 +126,7 @@
 .site-nav {
   background-color: $pink;
   bottom: 0;
-  padding: 30px 2rem;
+  padding: 30px 1rem;
   position: fixed;
   right: 0;
   transform: translateX(100%);
@@ -138,6 +140,7 @@
   }
 
   @include breakpoint(md) {
+    padding: 30px 2rem;
     width: 50%;
   }
 
@@ -147,6 +150,28 @@
 
   &.is-open {
     transform: translateX(0);
+  }
+}
+
+.site-nav__wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+
+  ul { text-align: center; }
+
+  .type--header {
+    font-size: 2.75rem;
+  }
+
+  @include breakpoint(md) {
+    ul { text-align: left; }
+
+    .type--header {
+      font-size: 3rem;
+    }
   }
 }
 

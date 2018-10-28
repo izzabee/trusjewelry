@@ -78,7 +78,7 @@ p {
 .type--header {
   color: $white;
   font-family: $sanserif;
-  font-size: 2.75rem;
+  font-size: 3.75rem;
   font-stretch: normal;
   font-style: normal;
   font-weight: 100;
@@ -127,14 +127,24 @@ h1, h2, h3 {
   @extend .type--header;
 }
 
-h4, h5 {
-  @extend .type--header;
+h2, h3 {
   font-size: 2.25rem;
   line-height: 2.75rem;
 
   @include breakpoint(md) {
     font-size: 3.5rem;
     line-height: 3.5rem;
+  }
+}
+
+h4, h5 {
+  @extend .type--header;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+
+  @include breakpoint(md) {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 }
 

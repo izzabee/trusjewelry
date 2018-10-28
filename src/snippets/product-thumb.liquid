@@ -1,0 +1,16 @@
+<a href="{{ product.url | within: collection }}" class="product-thumb grid">
+  {% include 'responsive-image' with
+    image: product.featured_image,
+    max_width: 300,
+    max_height: 300,
+    image_attributes: "",
+    wrapper_class: 'product-thumb__figure',
+    wrapper_attributes: "data-product-image-wrapper",
+    image_class: ""
+  %}
+
+  <div class="product-thumb__content grid">
+    <h5>{{ product.title }}</h5>
+    <p>{{ product.price | money }}</p>
+  </div>
+</a>

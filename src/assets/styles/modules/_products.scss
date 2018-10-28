@@ -8,7 +8,7 @@
     position: relative;
 
     .collection-list__img {
-      background-color: $peach;
+      // background-color: $peach;
       position: relative;
     }
 
@@ -83,6 +83,7 @@
 .hover-img {
   &.top {
     img {
+      filter: grayscale(100%);
       mix-blend-mode: multiply;
       opacity: 1;
       transition: opacity 0.6s;
@@ -93,18 +94,29 @@
     img {
       opacity: 0;
       bottom: 0;
-      left: 50%;
+      left: auto;
       position: absolute;
       right: 0;
       top: 0;
-      transform: translate(-50%);
+      transform: none;
       transition: opacity 0.6s;
+    }
+  }
+
+  @include breakpoint(md) {
+    &.bottom {
+      img {
+        left: 50%;
+        right: 0;
+        transform: translateX(-50%);
+      }
     }
   }
 }
 
 .product-page {
-  margin-top: 30px;
+  margin: 30px auto 0;
+  max-width: 1200px;
   padding: 0 1rem;
 
   .breadcrumbs {
@@ -113,14 +125,28 @@
     padding-bottom: 30px;
   }
 
+  .social-sharing {
+    margin: 50px auto 0;
+  }
+
   @include breakpoint(md) {
     margin-top: 50px;
-    padding: 0 5rem;
+    // padding: 0 5rem;
+
+    .social-sharing {
+      margin: 50px 0 0;
+    }
   }
 }
 
 .product__images {
-  padding-left: 30px;
+  padding-left: 0;
+  padding-top: 30px;
+
+  @include breakpoint(md) {
+    padding-left: 30px;
+    padding-top: 0;
+  }
 }
 
 .product-images--hidden {
@@ -139,7 +165,6 @@
 .product-image--thumbs {
   flex-wrap: wrap;
   flex-direction: row;
-  margin-top: 0;
   padding-right: 50px;
 
   a {
@@ -194,6 +219,10 @@
 
   p { max-width: 90%; }
 
+  ul {
+    @extend .type--body;
+  }
+
   @include breakpoint(md) {
     margin-top: 50px;
 
@@ -201,4 +230,50 @@
   }
 }
 
+.related-products {
+  margin-top: 100px;
+}
 
+.related-products__list {
+  justify-content: space-around;
+  width: 100%;
+}
+
+.product-thumb {
+  align-items: center;
+
+  &:hover {
+    .product-thumb__content:before { width: 80px; }
+  }
+}
+
+.product-thumb__content {
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem 1rem;
+  position: relative;
+
+  &:before {
+    background-color: $white;
+    content: '';
+    height: 1px;
+    margin: 0 auto;
+    opacity: 0.6;
+    position: absolute;
+    top: 1.5rem;
+    transition: width 0.3s ease-in;
+    width: 50px;
+  }
+
+  h5, p { margin: 0; }
+
+  p {
+    font-weight: 100;
+    line-height: 1.75rem;
+
+    @include breakpoint(md) {
+      font-weight: 300;
+      line-height: 2.5rem;
+    }
+  }
+}
