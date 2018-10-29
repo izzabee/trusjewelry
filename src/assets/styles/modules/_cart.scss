@@ -6,12 +6,15 @@
 
   h1 {
     font-size: 3rem;
+
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
   }
 }
 
 .form--cart {
-  max-width: 80%;
-  margin: 0 auto;
+  max-width: 100%;
 
   .responsive-table {
     border-bottom: 1px solid $white;
@@ -27,6 +30,11 @@
       padding: 30px 0;
     }
   }
+
+  @include breakpoint(md) {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .cart__head {
@@ -36,21 +44,66 @@
     font-weight: 300;
     padding: 20px 0;
   }
+
+  @media (max-width: $break-sm) {
+    display: none;
+  }
+}
+
+.cart__prod {
+  flex-direction: row;
+
+  img { max-width: 60px; }
+
+  @include breakpoint(md) {
+    img { max-width: 120px; }
+  }
 }
 
 .cart__prod-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
+
+  @include breakpoint(md) {
+    padding-left: 1rem;
+  }
 }
 
 .cart__summary {
   margin-left: auto;
+  max-width: 300px;
   text-align: right;
-  width: 30%;
+  width: auto;
 
   .grid--half.button {
     margin-right: 5px;
+  }
+}
+
+.cart-prod__price {
+  display: none !important;
+
+  @include breakpoint(md) {
+    display: table-cell !important;
+  }
+}
+
+.cart__prod-remove {
+  display: none !important;
+
+  @include breakpoint(md) {
+    display: flex !important;
+  }
+}
+
+.cart__prod-remove--mobile {
+  margin-left: 0.5rem;
+
+  .button { padding: 5px 10px; }
+
+  @include breakpoint(md) {
+    display: none !important;
   }
 }

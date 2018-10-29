@@ -4,14 +4,11 @@
 body {
   background-color: $peach;
   color: $white;
-  // margin: 15px;
   padding: 15px;
   position: relative;
   min-height: calc(100vh - 30px);
-  // overflow: hidden;
 
   @include breakpoint(md) {
-    // margin: 30px;
     padding: 30px;
     min-height: calc(100vh - 60px);
   }
@@ -22,14 +19,11 @@ body {
 }
 
 .content {
-  // background-color: $peach;
-  // height: calc(100vh - 30px);
-  // overflow: auto;
-  padding: calc(1rem + 55px) 0 1rem;
+  min-height: calc(100vh - 110px);
+  padding: 80px 0;
 
   @include breakpoint(md) {
-    // height: calc(100vh - 60px);
-    padding: $navHeight 1rem 1rem;
+    padding: $navHeight 1rem;
   }
 }
 
@@ -204,6 +198,30 @@ body {
 }
 
 // Homepage
+.lg-text--list {
+  max-width: 900px;
+  margin: 0 auto;
+
+  ul {
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 50px 0;
+  }
+
+  @include breakpoint(md) {
+    ul {
+      border: none;
+      padding: 0;
+    }
+  }
+}
+
+.coming-soon {
+  width: 100%;
+
+  h4, h5 { margin: 0; }
+}
+
 .homepage {
   flex-direction: column-reverse;
   padding-left: 15px;
@@ -252,6 +270,11 @@ body {
   .type--right { text-align: center; }
   @include breakpoint(md) {
     .type--right { text-align: right; }
+  }
+
+  p {
+    margin-left: auto;
+    max-width: 600px;
   }
 }
 

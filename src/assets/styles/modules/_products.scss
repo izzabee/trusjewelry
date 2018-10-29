@@ -117,12 +117,12 @@
 .product-page {
   margin: 30px auto 0;
   max-width: 1200px;
-  padding: 0 1rem;
+  // padding: 0 1rem;
 
   .breadcrumbs {
     margin: 0;
     padding: 0;
-    padding-bottom: 30px;
+    // padding-bottom: 30px;
   }
 
   .social-sharing {
@@ -137,6 +137,10 @@
       margin: 50px 0 0;
     }
   }
+}
+
+.product-title {
+  margin-top: 0;
 }
 
 .product__images {

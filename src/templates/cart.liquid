@@ -4,7 +4,7 @@
 
   <form action="/cart" method="post" novalidate class="form--cart">
     <table class="responsive-table">
-      <thead class="small--hide">
+      <thead>
         <tr class="cart__head">
           <th class="type--left">{{ 'cart.label.product' | t }}</th>
           <th class="type--left">{{ 'cart.label.price' | t }}</th>
@@ -26,7 +26,7 @@
 
           <tr class="responsive-table-row">
 
-            <td class="type--left grid grid--row" data-label="{{ 'customer.order.product' | t }}">
+            <td class="type--left grid grid--row cart__prod" data-label="{{ 'customer.order.product' | t }}">
 
               {% if item.image != blank %}
                 <a href="{{ item.url | within: collections.all }}">
@@ -58,13 +58,13 @@
                   {% endfor %}
                 {% endif %}
 
-                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="button button--invert">
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="button button--invert cart__prod-remove">
                   <small>{{ 'cart.general.remove' | t }}</small>
                 </a>
               </div>
             </td>
 
-            <td class="type--left" data-label="{{ 'cart.label.price' | t }}">
+            <td class="type--left cart-prod__price" data-label="{{ 'cart.label.price' | t }}">
               {% if item.original_line_price != item.line_price %}
                 <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
                 {{ item.price | money }}
@@ -74,7 +74,7 @@
                 {{ item.price | money }}
               {% endif %}
             </td>
-            <td class="type--center" data-label="{{ 'cart.label.quantity' | t }}">
+            <td class="type--center cart-prod__quantity" data-label="{{ 'cart.label.quantity' | t }}">
               <input type="number"
                      name="updates[]"
                      id="updates_{{ item.key }}"
@@ -84,6 +84,11 @@
             </td>
             <td class="type--right" data-label="{{ 'cart.label.total' | t }}">
               {{ item.line_price | money }}
+            </td>
+            <td class="type--right cart__prod-remove--mobile">
+              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="button button--invert button--sm">
+                <small>x</small>
+              </a>
             </td>
           </tr>
 

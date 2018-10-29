@@ -12,13 +12,25 @@
   {% else %}
     </div>
   {% endif %}
-
+  {% comment %}
+  <a href="/cart" class="link--cart">
+    {% include 'icon-cart' %}
+  </a>
+  {% endcomment %}
   <button class="btn--reset nav-toggle"></button>
 </header>
 
 <nav role="navigation" class="site-nav">
   <div class="site-nav__wrap">
     <ul class="list--reset">
+      <li class="type--header">
+        <a href="/cart" class="link--cart link--lg">
+          <span>
+            {{ 'layout.cart.title' | t }}
+            ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
+          </span>
+        </a>
+      </li>
       {% for link in linklists[section.settings.menu].links %}
         {% if link.links != blank %}
           <li>
@@ -45,18 +57,10 @@
         {% endif %}
       {% endfor %}
       <li class="type--header">
-        <a href="/cart" class="link--cart">
-          <span>
-            {{ 'layout.cart.title' | t }}
-            ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
-          </span>
-        </a>
+        <a class="link--lg" href="/collections/frontpage">Shop</a>
       </li>
       <li class="type--header">
-        <a href="/collections/frontpage">Shop</a>
-      </li>
-      <li class="type--header">
-        <a href="/pages/about">About Us</a>
+        <a class="link--lg" href="/pages/about">About</a>
       </li>
     </ul>
     <ul class="list--reset">
@@ -93,5 +97,12 @@
         {% endcomment %}
       </li>
     </ul>
+    <p class="type--header type--medium">Social:</p>
+    <a target="_blank" href="https://www.instagram.com/trusjewelry/" class="link--lg type--header type--medium" rel="noopener noreferrer">
+      Instagram
+    </a>
+    <a target="_blank" href="https://www.facebook.com/trusjewelry" class="link--lg type--header type--medium" rel="noopener noreferrer">
+      Facebook
+    </a>
   </div>
 </nav>

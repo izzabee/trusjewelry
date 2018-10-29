@@ -3,7 +3,6 @@
 
 .site-header {
   align-items: center;
-  background-color: $peach;
   display: flex;
   height: $navHeight;
   justify-content: space-between;
@@ -46,11 +45,8 @@
   }
 
   @include breakpoint(md) {
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    top: 5px;
+    left: 35px;
+    top: 15px;
   }
 }
 
@@ -157,10 +153,18 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-around;
+  justify-content: flex-start;
+  margin-top: 50px;
   width: 100%;
 
+  p { margin-bottom: 0; }
+
   ul { text-align: center; }
+
+  li {
+    margin: 0;
+    &:first-of-type { margin-bottom: 2rem; }
+  }
 
   .type--header {
     font-size: 2.75rem;
@@ -168,6 +172,10 @@
 
   @include breakpoint(md) {
     ul { text-align: left; }
+
+    li {
+      &:first-of-type { margin-bottom: 1rem; }
+    }
 
     .type--header {
       font-size: 3rem;

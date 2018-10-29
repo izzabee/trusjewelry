@@ -1,19 +1,18 @@
-
 <header role="banner">
+  <h1 class="type--wide type--lg type--center">{{ collection.title }}</h1>
   {% if collection.description != blank %}
-    <h1>{{ collection.title }}</h1>
     <div class="rte">
       {{ collection.description }}
     </div>
   {% endif %}
 
+  {% comment %}
   <div class="breadcrumbs">
     <span class="type--thin">Collections</span>
     <span class="type--thin">/</span>
     <span>{{ collection.title }}</span>
   </div>
 
-  {% comment %}
     {% if collection.all_tags.size > 0 %}
       <ul>
         {% for tag in collection.all_tags %}

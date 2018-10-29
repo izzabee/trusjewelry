@@ -1,20 +1,28 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
-{% assign main_collection = collection ?? product.collections.first %}
-
+{% comment %}
 <div class="breadcrumbs">
   <span class="type--thin">Collections</span>
   <span class="type--thin">/</span>
-  <a href="{{ main_collection.url }}"><span class="type--thin">{{ main_collection.title }}</span></a>
+  <a href="{{ collection.url }}"><span class="type--thin">{{ collection.title }}</span></a>
   <span class="type--thin">/</span>
   <span>{{ product.title }}</span>
 </div>
+{% endcomment %}
+
+<h1 class="type--lg type--wide type--center product-title">{{ product.title }}</h1>
 
 <div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" class="grid grid--row product-page">
   <section class="grid--60 product__content">
 
-    <h1>{{ product.title }}</h1>
+    <p class="type--body">
+      <span>{{ product.title }}</span>
+      <span>-</span>
+      <span>Collection {{ product.collections.first.title }}</span>
+    </p>
+    <p class="type--body">
+    </p>
 
     <div class="product__price form--small" data-price-wrapper>
       <span data-product-price>
@@ -152,11 +160,11 @@
 {% endif %}
 
 
-{% if main_collection.products | size %}
+{% if collection.products.size %}
 <div class="related-products">
   <h3 class="type--center">Related Products</h3>
   <ul class="grid grid--row list--reset related-products__list">
-  {% for product in main_collection.products %}
+  {% for product in collection.products %}
     <li>
       {% include 'product-thumb' with { product: product } %}
     </li>

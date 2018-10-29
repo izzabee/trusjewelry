@@ -8,6 +8,7 @@ form {
   textarea,
   input {
     border: 1px solid $black;
+    border-radius: 0;
     color: $black;
     font-family: $sanserif;
     font-weight: 300;
@@ -26,8 +27,12 @@ form {
 }
 
 input[type="number"] {
-  max-width: 100px;
+  max-width: 50px;
   width: auto;
+
+  @include breakpoint(md) {
+    max-width: 100px;
+  }
 }
 
 select {
@@ -99,6 +104,6 @@ select {
   .grid { margin-bottom: 1rem; }
 
   @include breakpoint(md) {
-    .grid--half { padding-right: 1rem; }
+    .grid--half:first-of-type { padding-right: 1rem; }
   }
 }

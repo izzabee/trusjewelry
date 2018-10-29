@@ -30,6 +30,13 @@ p {
   }
 }
 
+.link--lg {
+  transition: color 0.3s;
+  &:hover {
+    color: $black;
+  }
+}
+
 .link--icon {
   display: block;
 
@@ -61,18 +68,12 @@ p {
   font-weight: 800;
 }
 
-.type--thin {
-  font-weight: 100;
+.type--medium {
+  font-weight: 300;
 }
 
-.type--xl {
-  font-size: 5rem;
-  @include breakpoint(md) {
-    font-size: 8rem;
-  }
-  @include breakpoint(lg) {
-    font-size: 10rem;
-  }
+.type--thin {
+  font-weight: 100;
 }
 
 .type--header {
@@ -91,6 +92,32 @@ p {
   }
 }
 
+.type--xl {
+  font-size: 5rem;
+  @include breakpoint(md) {
+    font-size: 8rem;
+  }
+  @include breakpoint(lg) {
+    font-size: 10rem;
+  }
+}
+
+.type--lg {
+  font-size: 4rem;
+  line-height: 4.5rem;
+  word-break: break-word;
+
+  @include breakpoint(md) {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 8rem;
+    line-height: 8.5rem;
+  }
+}
+
 .type--small {
   font-size: 0.75rem;
 }
@@ -106,6 +133,12 @@ p {
   @include breakpoint(md) {
     line-height: 1.6rem;
   }
+}
+
+.type--full {
+  display: block;
+  width: 100%;
+  word-break: break-word;
 }
 
 .type--subheader {
@@ -135,6 +168,11 @@ h2, h3 {
     font-size: 3.5rem;
     line-height: 3.5rem;
   }
+
+  @include breakpoint(lg) {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
 }
 
 h4, h5 {
@@ -152,4 +190,8 @@ h4, h5 {
   display: flex;
 
   li { margin-right: 5px; }
+}
+
+.list--wide {
+  width: 100%;
 }
