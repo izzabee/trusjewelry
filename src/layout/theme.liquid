@@ -31,7 +31,7 @@
   {%- endif -%}
 
 
-<!--
+  {% comment %}
   <title>{{ shop.name }}</title>
 
   <meta name="description" content="{{ page_description | escape }}" />
@@ -67,7 +67,8 @@
   <link rel="apple-touch-icon-precomposed" type="image/png" href="/assets/images/apple_touch_icon_72.png" sizes="72x72">
   <link rel="apple-touch-icon-precomposed" type="image/png" href="/assets/images/apple_touch_icon_60.png" sizes="60x60">
   <link rel="apple-touch-icon-precomposed" type="image/png" href="/assets/images/apple_touch_icon_57.png" sizes="57x57">
- -->
+  {% endcomment %}
+
   {% include 'social-meta-tags' %}
   {% include 'style-tags', layout: 'theme' %}
   {% include 'script-tags', layout: 'theme' %}
