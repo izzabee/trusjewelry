@@ -10,7 +10,7 @@
     "404": {
       "title": "404 - Page non trouvée",
       "subtext_html":
-        "Cette page n'est pas disponible. <a href=\"/collections/all\">Retourner au magasinage</a>"
+        "Cette page n'est pas disponible. <a href=\"/collections/frontpage\">Retourner au magasinage</a>"
     },
     "password_page": {
       "opening_soon": "Bientôt ouvert",
@@ -104,7 +104,7 @@
       "empty": "Votre panier est vide.",
       "cookies_required": "Activer les cookies pour utiliser le panier",
       "continue_browsing_html":
-        "<a href=\"/collections/all\">Retourner au magasinage</a>.",
+        "<a href=\"/collections/frontpage\">Retourner au magasinage</a>.",
       "item_quantity": "Quantité de l'article",
       "savings": "Vous économisez"
     },
