@@ -113,8 +113,10 @@
       <div class="grid grid--row">
         <input type="submit" name="update" class="button button--invert grid--half" value="{{ 'cart.general.update' | t }}">
         <input type="submit" name="checkout" class="button grid--half" value="{{ 'cart.general.checkout' | t }}">
+        <a href="/collections/frontpage" class="button type--center hidden-desktop">Continue Shopping</a>
       </div>
     </div>
+    <a href="/collections/frontpage" class="button hidden-mobile continue-browsing-link">Continue Shopping</a>
   </form>
 {% else %}
   {% comment %}

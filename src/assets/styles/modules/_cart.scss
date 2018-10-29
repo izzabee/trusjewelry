@@ -15,6 +15,7 @@
 
 .form--cart {
   max-width: 100%;
+  position: relative;
 
   .responsive-table {
     border-bottom: 1px solid $white;
@@ -105,5 +106,13 @@
 
   @include breakpoint(md) {
     display: none !important;
+  }
+}
+
+.continue-browsing-link {
+  @include breakpoint(sm) {
+    bottom: 0;
+    left: 0;
+    position: absolute;
   }
 }

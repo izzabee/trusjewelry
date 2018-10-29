@@ -7,13 +7,14 @@
   height: $navHeight;
   justify-content: space-between;
   left: 5px;
-  position: absolute;
+  position: fixed;
   right: 5px;
   top: 5px;
+  z-index: 10;
 
   @include breakpoint(md) {
-    left: 15px;
-    right: 15px;
+    left: 20px;
+    right: 20px;
     top: 15px;
   }
 }
@@ -33,10 +34,10 @@
 
 .logo-image {
   display: block;
-  left: 10px;
-  position: fixed;
-  top: 10px;
-  width: 100px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 70px;
   z-index: 9;
 
   svg {
@@ -45,24 +46,54 @@
   }
 
   @include breakpoint(md) {
-    left: 35px;
-    top: 15px;
+    left: 15px;
+    width: 90px;
   }
 }
 
+.link--cart {
+  display: block;
+  height: 28px;
+  width: 30px;
+  position: relative;
+  right: 40px;
+  top: -5px;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include breakpoint(md) {
+    height: 38px;
+    right: 55px;
+    width: 45px;
+    top: 0;
+  }
+}
+
+.link--cart__count {
+  font-size: 0.6rem;
+  left: 50%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+}
+
 .nav-toggle {
-  height: 30px;
+  height: 20px;
   margin-right: 5px;
-  position: fixed;
-  top: 25px;
-  right: 20px;
+  position: absolute;
+  right: 0;
+  top: 10px;
   transition: all 0.3s;
-  width: 35px;
+  width: 25px;
   z-index: 10;
 
   @include breakpoint(md) {
-    top: 45px;
-    right: 40px;
+    height: 30px;
+    width: 35px;
   }
 
   &:hover {

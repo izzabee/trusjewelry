@@ -12,17 +12,18 @@
   {% else %}
     </div>
   {% endif %}
-  {% comment %}
   <a href="/cart" class="link--cart">
-    {% include 'icon-cart' %}
+    {% include 'icon-bag' %}
+    <span class="link--cart__count">({{ cart.item_count }})</span>
   </a>
-  {% endcomment %}
+
   <button class="btn--reset nav-toggle"></button>
 </header>
 
 <nav role="navigation" class="site-nav">
   <div class="site-nav__wrap">
     <ul class="list--reset">
+      {% comment %}
       <li class="type--header">
         <a href="/cart" class="link--cart link--lg">
           <span>
@@ -31,6 +32,7 @@
           </span>
         </a>
       </li>
+        {% endcomment %}
       {% for link in linklists[section.settings.menu].links %}
         {% if link.links != blank %}
           <li>
