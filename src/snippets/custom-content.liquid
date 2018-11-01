@@ -6,13 +6,6 @@
     <br />
     For Femmes
   </h2>
-  <ul class="list--reset list--wide">
-    {% for product in collection.products %}
-      <li class="type--left">
-        <a href="{{ product.url | within: collection }}" class="link--lg type--header type--lg">{{ product.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
 
   <h3 class="type--left type--full">
     <a href="/collections/frontpage" class="link--lg type--header type--lg">Collection</a>

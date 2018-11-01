@@ -40,7 +40,14 @@
             {% include 'responsive-image' with
               image: product.featured_image,
               max_width: 700,
-              max_height: 800
+              max_height: 800,
+              wrapper_class: 'hover-img top'
+            %}
+            {% include 'responsive-image' with
+              image: product.featured_image,
+              max_width: 700,
+              max_height: 800,
+              wrapper_class: 'hover-img bottom'
             %}
           {% endif %}
         </div>

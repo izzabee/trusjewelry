@@ -217,9 +217,14 @@ body {
 }
 
 .coming-soon {
+  padding: 50px;
   width: 100%;
 
   h4, h5 { margin: 0; }
+
+  @include breakpoint(md) {
+    padding: 100px;
+  }
 }
 
 .homepage {
