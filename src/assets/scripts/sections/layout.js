@@ -11,7 +11,6 @@ const cacheEls = () => {
 }
 
 const animateLine = () => {
-  console.log(els.section)
   addClass(els.section, 'in')
 }
 

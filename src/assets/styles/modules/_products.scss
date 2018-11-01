@@ -8,8 +8,12 @@
     position: relative;
 
     .collection-list__img {
-      // background-color: $peach;
       position: relative;
+    }
+
+    .collection-list__img {
+      opacity: 0;
+      transition: opacity 0.4s 0.3s;
     }
 
     &:after {
@@ -22,7 +26,7 @@
       right: auto;
       top: calc(100% - 110px);
       transition: width 0.3s;
-      width: 50%;
+      width: 0;
     }
 
     @include breakpoint(md) {
@@ -31,7 +35,6 @@
         margin: 0 auto;
         right: 0;
         top: calc(50% - 1px);
-        width: 15%;
       }
     }
 
@@ -41,6 +44,17 @@
 
       &:after { width: 20%; }
     }
+
+    &.in {
+      .collection-list__img { opacity: 1; }
+
+      &:after {
+          width: 50%;
+          @include breakpoint(md) {
+            width: 15%;
+          }
+        }
+      }
   }
 
   li {

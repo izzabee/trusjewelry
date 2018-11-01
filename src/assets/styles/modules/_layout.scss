@@ -23,13 +23,13 @@ body {
   padding: 80px 0;
 
   @include breakpoint(md) {
-    padding: $navHeight 1rem;
+    padding: $navHeight 0.3rem;
   }
 }
 
 .social-sharing {
   display: flex;
-  max-width: 100px;
+  max-width: 130px;
 
   li {
     margin-right: 0.5rem;
@@ -176,8 +176,29 @@ body {
   height: 100%;
   width: 100%;
 
+  img { width: 100%; }
+
   @include breakpoint(md) {
     width: 30%;
+  }
+}
+
+.grid--third {
+  // width: 100%;
+  width: 33%;
+
+  img { width: 100%; }
+
+  @include breakpoint(md) {
+  }
+}
+
+.list--images {
+  justify-content: space-between;
+  flex-direction: row;
+
+  @include breakpoint(md) {
+    padding: 30px 0;
   }
 }
 
@@ -217,13 +238,24 @@ body {
 }
 
 .coming-soon {
-  padding: 50px;
+  padding: 50px 0;
+  position: relative;
   width: 100%;
 
   h4, h5 { margin: 0; }
 
   @include breakpoint(md) {
-    padding: 100px;
+    padding: 100px 0;
+  }
+
+  &:after {
+    background-color: $white;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
   }
 }
 
@@ -274,7 +306,10 @@ body {
 .contact {
   .type--right { text-align: center; }
   @include breakpoint(md) {
-    .type--right { text-align: right; }
+    .type--right {
+      padding-left: 1rem;
+      text-align: right;
+    }
   }
 
   p {
@@ -301,8 +336,23 @@ body {
 }
 
 .insta-feed {
+  margin-top: 50px;
+  padding: 50px 0;
+  position: relative;
+
+  &:before {
+    background-color: $white;
+    content: '';
+    height: 1px;
+    left: 15%;
+    position: absolute;
+    right: 15%;
+    top: 0;
+  }
+
   @include breakpoint(md) {
-    padding: 30px 0;
+    margin-top: 100px;
+    padding: 100px 0 50px;
   }
 }
 

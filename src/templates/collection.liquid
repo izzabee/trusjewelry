@@ -34,7 +34,7 @@
 <ul class="list--reset collection-list">
   {% for product in collection.products %}
     <li>
-      <a href="{{ product.url | within: collection }}" class="grid grid--row">
+      <a href="{{ product.url | within: collection }}" class="grid grid--row js-line">
         <div class="grid--half collection-list__img">
           {% if product.featured_image != blank %}
             {% include 'responsive-image' with

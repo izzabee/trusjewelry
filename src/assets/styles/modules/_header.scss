@@ -66,10 +66,21 @@
 
   @include breakpoint(md) {
     height: 38px;
-    right: 55px;
+    right: 65px;
     width: 45px;
     top: 0;
+
+    &:hover {
+      animation: wiggle 0.4s ease-in;
+    }
   }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(15deg); }
+  33% { transform: rotate(-15deg); }
+  66% { transform: rotate(15deg); }
+  100% { transform: rotate(0); }
 }
 
 .link--cart__count {
@@ -83,7 +94,6 @@
 
 .nav-toggle {
   height: 20px;
-  margin-right: 5px;
   position: absolute;
   right: 0;
   top: 10px;
@@ -93,6 +103,7 @@
 
   @include breakpoint(md) {
     height: 30px;
+    right: 15px;
     width: 35px;
   }
 
@@ -114,7 +125,6 @@
     position: absolute;
     right: 0;
     top: 0;
-    // transition: transform 0.3s;
   }
 
   &:after {
