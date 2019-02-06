@@ -13,10 +13,24 @@
 
   <ul class="list--reset">
     {% for collection in collections %}
-      <li class="type--left">
-        <a href="{{ collection.url }}" class="link--lg type--header type--lg">{{ collection.title }}</a>
+      <li class="type--left link--grid">
+        <h4 class="type--lg type--header type--no-pad link--grid__title">{{ collection.title }}</h4>
+        <span class="link--grid__links">
+          <a href="{{ collection.url }}" class="link--lg type--header">View</a>
+          <a href="{{ '../static/trus-lookbook-femme.pdf' | asset_url }}" class="link--lg type--header">Lookbook</a>
+        </span>
       </li>
     {% endfor %}
+
+    <li class="type--left link--grid">
+      <h4 class="type--lg type--header type--no-pad link--grid__title">Form</h4>
+      <span class="link--grid__links">
+        <span class="type--header">Coming </span>
+        <span class="type--header">soon</span>
+        <!-- <a href="#" class="link--lg type--header">View</a> -->
+        <!-- <a href="#" class="link--lg type--header">Lookbook</a> -->
+      </span>
+    </li>
   </ul>
 
   <div class="coming-soon">

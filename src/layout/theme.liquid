@@ -26,48 +26,39 @@
   {%- endcapture -%}
   <title>{{ seo_title | strip }}</title>
 
-  {%- if page_description -%}
-    <meta name="description" content="{{ page_description | escape }}">
-  {%- endif -%}
-
-
-  {% comment %}
-  <title>{{ shop.name }}</title>
-
   <meta name="description" content="{{ page_description | escape }}" />
-  <meta name="author" content="" />
-  <meta property="og:title" content="Trüs Jewelry | Fine Pinky Rings" />
+  <meta name="author" content="Trüs Jewelry" />
+  <meta property="og:title" content="{{ seo_title | strip }}" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_us" />
-  <meta property="og:image" content="" />
+  <meta property="og:image" content="{{ '../images/trus_og_image.png' | asset_url }}" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="538" />
-  <meta property="og:url" content="" />
-  <meta property="og:description" content="" />
-  <meta property="twitter:title" content="" />
-  <meta property="twitter:description" content="" />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:site" content="" />
-  <meta property="twitter:image" content="" />
+  <meta property="og:url" content="https://www.trusjewelry.com/" />
+  <meta property="og:description" content="{{ page_description | escape }}" />
+  <meta property="twitter:title" content="{{ seo_title | strip }}" />
+  <meta property="twitter:description" content="{{ page_description | escape }}" />
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="https://www.trusjewelry.com/" />
+  <meta property="twitter:image" content="{{ '../images/trus_og_image.png' | asset_url }}" />
   <meta property="twitter:image:width" content="1200" />
   <meta property="twitter:image:height" content="630" />
-  {% endcomment %}
 
-  <link rel="icon" type="image/ico" href="/images/favicon.ico" sizes="48x48">
-  <link rel="icon" type="image/png" href="/images/favicon.png" sizes="196x196">
-  <link rel="icon" type="image/png" href="/images/favicon_196.png" sizes="196x196">
-  <link rel="icon" type="image/png" href="/images/favicon_128.png" sizes="128x128">
-  <link rel="icon" type="image/png" href="/images/favicon_96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/images/favicon_32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/images/favicon_16.png" sizes="16x16">
-  <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple_touch_icon_152.png" sizes="152x152">
-  <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple_touch_icon_144.png" sizes="144x144">
-  <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple_touch_icon_114.png" sizes="114x114">
-  <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple_touch_icon_120.png" sizes="120x120">
-  <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple_touch_icon_76.png" sizes="76x76">
-  <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple_touch_icon_72.png" sizes="72x72">
-  <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple_touch_icon_60.png" sizes="60x60">
-  <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple_touch_icon_57.png" sizes="57x57">
+  <link rel="icon" type="image/ico" href="{{ '../images/favicon.ico' | asset_url }}" sizes="48x48">
+  <link rel="icon" type="image/png" href="{{ '../images/favicon.png' | asset_url }}" sizes="196x196">
+  <link rel="icon" type="image/png" href="{{ '../images/favicon_196.png' | asset_url }}" sizes="196x196">
+  <link rel="icon" type="image/png" href="{{ '../images/favicon_128.png' | asset_url }}" sizes="128x128">
+  <link rel="icon" type="image/png" href="{{ '../images/favicon_96.png' | asset_url }}" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ '../images/favicon_32.png' | asset_url }}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ '../images/favicon_16.png' | asset_url }}" sizes="16x16">
+  <link rel="apple-touch-icon-precomposed" type="image/png" href="{{ '../images/apple_touch_icon_152.png' | asset_url }}" sizes="152x152">
+  <link rel="apple-touch-icon-precomposed" type="image/png" href="{{ '../images/apple_touch_icon_144.png' | asset_url }}" sizes="144x144">
+  <link rel="apple-touch-icon-precomposed" type="image/png" href="{{ '../images/apple_touch_icon_114.png' | asset_url }}" sizes="114x114">
+  <link rel="apple-touch-icon-precomposed" type="image/png" href="{{ '../images/apple_touch_icon_120.png' | asset_url }}" sizes="120x120">
+  <link rel="apple-touch-icon-precomposed" type="image/png" href="{{ '../images/apple_touch_icon_76.png' | asset_url }}" sizes="76x76">
+  <link rel="apple-touch-icon-precomposed" type="image/png" href="{{ '../images/apple_touch_icon_72.png' | asset_url }}" sizes="72x72">
+  <link rel="apple-touch-icon-precomposed" type="image/png" href="{{ '../images/apple_touch_icon_60.png' | asset_url }}" sizes="60x60">
+  <link rel="apple-touch-icon-precomposed" type="image/png" href="{{ '../images/apple_touch_icon_57.png' | asset_url }}" sizes="57x57">
 
   {% include 'social-meta-tags' %}
   {% include 'style-tags', layout: 'theme' %}

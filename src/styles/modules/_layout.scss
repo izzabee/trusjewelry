@@ -318,6 +318,24 @@ body {
   }
 }
 
+.link--grid {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.link--grid__title {
+  margin: 0;
+  width: auto;
+  word-break: normal;
+}
+
+.link--grid__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+}
+
 .image-wrap {
   margin: 0;
 

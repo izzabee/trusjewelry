@@ -87,9 +87,14 @@ p {
   text-transform: uppercase;
 
   @include breakpoint(md) {
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
   }
+
+  // @include breakpoint(lg) {
+  //   font-size: 4rem;
+  //   line-height: 4rem;
+  // }
 }
 
 .type--xl {
@@ -155,6 +160,9 @@ p {
 .type--center { text-align: center; }
 .type--right { text-align: right; }
 .type--left { text-align: left; }
+
+.type--no-pad { margin: 0; }
+.type--no-pad--btm { margin-bottom: 1rem; }
 
 h1, h2, h3 {
   @extend .type--header;
