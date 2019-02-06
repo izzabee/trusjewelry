@@ -14,10 +14,11 @@
   <ul class="list--reset">
     {% for collection in collections %}
       <li class="type--left link--grid">
-        <h4 class="type--lg type--header type--no-pad link--grid__title">{{ collection.title }}</h4>
+        <h4 class="link--grid__title">
+          <a href="{{ collection.url }}" class="type--lg type--header type--no-pad link--lg">{{ collection.title }}</a>
+        </h4>
         <span class="link--grid__links">
-          <a href="{{ collection.url }}" class="link--lg type--header">View</a>
-          <a href="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/trus-lookbook-femme.pdf?880741757667951064" class="link--lg type--header" target="_blank">Lookbook</a>
+          <a href="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/trus-lookbook-{{ collection.title | downcase }}.pdf?880741757667951064" class="link--lg type--header" target="_blank">View <br /> Lookbook</a>
         </span>
       </li>
     {% endfor %}
@@ -33,18 +34,8 @@
     </li>
   </ul>
 
-  <div class="coming-soon">
-    {% comment %}
-    <h4 class="type--left type--full">
-      Lookbook coming soon...
-    </h4>
-    {% endcomment %}
-
-    <h5 class="type--left type--full">
-      <a href="/pages/about" class="link--lg">Get in touch with us</a>
-    </h5>
-  </div>
-</section>
+  <div class="coming-soon"></div>
+ </section>
 
 <ul class="grid grid--row list--reset list--images">
   <li class="grid--third"><img src="https://scontent-lga3-1.cdninstagram.com/vp/1f40ceceb30599ce81a1b64e61311f56/5C814AE9/t51.2885-15/sh0.08/e35/s640x640/30841940_158525051508370_4118868427068669952_n.jpg" alt=""></li>

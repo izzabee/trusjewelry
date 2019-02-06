@@ -10,7 +10,7 @@
     "404": {
       "title": "404 Pagina niet gevonden",
       "subtext_html":
-        "De pagina die u zocht bestaat niet. Klik <a href=\"/collections/frontpage\">hier</a> om verder te shoppen."
+        "De pagina die u zocht bestaat niet. Klik <a href=\"/collections/femme\">hier</a> om verder te shoppen."
     },
     "password_page": {
       "opening_soon": "Binnenkort open",
@@ -106,7 +106,7 @@
       "cookies_required":
         "Gelieve cookies te activeren om het winkelmandje te gebruiken",
       "continue_browsing_html":
-        "Bekijk <a href=\"/collections/frontpage\">alle producten</a>.",
+        "Bekijk <a href=\"/collections/femme\">alle producten</a>.",
       "item_quantity": "Hoeveelheid",
       "savings": "U bespaart"
     },

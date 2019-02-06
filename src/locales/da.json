@@ -10,7 +10,7 @@
     "404": {
       "title": "404 Siden findes ikke",
       "subtext_html":
-        "Siden du leder efter findes ikke. Klik <a href=\"/collections/frontpage\">her</a> for at fortsætte med at handle."
+        "Siden du leder efter findes ikke. Klik <a href=\"/collections/femme\">her</a> for at fortsætte med at handle."
     },
     "password_page": {
       "opening_soon": "Åbner Snart",
@@ -103,7 +103,7 @@
       "empty": "Din kurv er i øjeblikket tom.",
       "cookies_required": "Slå cookies til for at bruge indkøbskurven",
       "continue_browsing_html":
-        "Fortsæt med at handle <a href=\"/collections/frontpage\">her</a>.",
+        "Fortsæt med at handle <a href=\"/collections/femme\">her</a>.",
       "item_quantity": "Produkt antal",
       "savings": "Du sparer"
     },
