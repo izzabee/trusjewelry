@@ -6,35 +6,46 @@
     <br />
     For Femmes
   </h2>
+</section>
+<!--
+<ul class="grid grid--images list--reset list--images">
+  <li class="grid--third js-fade-in"><img src="https://scontent-lga3-1.cdninstagram.com/vp/1f40ceceb30599ce81a1b64e61311f56/5C814AE9/t51.2885-15/sh0.08/e35/s640x640/30841940_158525051508370_4118868427068669952_n.jpg" alt=""></li>
+  <li class="grid--third js-fade-in"><img src="https://scontent-lga3-1.cdninstagram.com/vp/fff0811969e724c6c7a3ecb1212fb717/5C81A2A9/t51.2885-15/sh0.08/e35/s640x640/25037418_358207254646573_3387837793261584384_n.jpg" alt=""></li>
+  <li class="grid--third js-fade-in"><img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/IMG_0944.jpg?4115557476902509908" alt=""></li>
+  <li class="grid--third js-fade-in"><img src="https://scontent-lga3-1.cdninstagram.com/vp/fb31788cfca4b406535c58dd709b34b3/5C852706/t51.2885-15/sh0.08/e35/s640x640/30085922_377312972767140_4388355806458806272_n.jpg" alt=""></li>
+</ul>
+ -->
 
-  <h3 class="type--left type--full type--lg">
-    Collections:
+<section class="lg-text--list grid content--pad">
+  <h3 class="type--left type--full type--md">
+    Collections&nbsp;&ndash;
   </h3>
 
   <ul class="list--reset">
     {% for collection in collections %}
       <li class="type--left link--grid">
-        <h4 class="link--grid__title">
-          <a href="{{ collection.url }}" class="type--lg type--header type--no-pad link--lg">{{ collection.title }}</a>
+        <h4 class="type--header link--grid__title">
+          <a href="{{ collection.url }}" class="type--md type--uppercase type--no-pad link--lg">{{ collection.title }}</a>
         </h4>
         <span class="link--grid__links">
-          <a href="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/trus-lookbook-{{ collection.title | downcase }}.pdf?880741757667951064" class="link--lg type--header" target="_blank">View <br /> Lookbook</a>
+          <a href="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/trus-lookbook-{{ collection.title | downcase }}.pdf?880741757667951064" class="link--lg type--uppercase" target="_blank">View <br /> Lookbook</a>
         </span>
       </li>
     {% endfor %}
 
     <li class="type--left link--grid">
-      <h4 class="type--lg type--header type--no-pad link--grid__title">Form</h4>
+      <h4 class="type--header type--md type--uppercase type--no-pad link--grid__title">Form</h4>
       <span class="link--grid__links">
-        <span class="type--header">Coming </span>
-        <span class="type--header">soon</span>
-        <!-- <a href="#" class="link--lg type--header">View</a> -->
-        <!-- <a href="#" class="link--lg type--header">Lookbook</a> -->
+        <span class="type--uppercase">Coming </span>
+        <span class="type--uppercase">soon</span>
+        <!-- <a href="#" class="link--lg type--md type--uppercase">View</a> -->
+        <!-- <a href="#" class="link--lg type--md type--uppercase">Lookbook</a> -->
       </span>
     </li>
   </ul>
 
   <div class="coming-soon"></div>
+
  </section>
 
 <ul class="grid grid--row list--reset list--images">
@@ -42,3 +53,5 @@
   <li class="grid--third"><img src="https://scontent-lga3-1.cdninstagram.com/vp/fff0811969e724c6c7a3ecb1212fb717/5C81A2A9/t51.2885-15/sh0.08/e35/s640x640/25037418_358207254646573_3387837793261584384_n.jpg" alt=""></li>
   <li class="grid--third"><img src="https://scontent-lga3-1.cdninstagram.com/vp/fb31788cfca4b406535c58dd709b34b3/5C852706/t51.2885-15/sh0.08/e35/s640x640/30085922_377312972767140_4388355806458806272_n.jpg" alt=""></li>
 </ul>
+
+
