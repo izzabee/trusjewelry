@@ -1,21 +1,30 @@
 {%- assign collection = collections.first -%}
 
-<section class="lg-text--list center-content grid content--pad">
+<section class="lg-text--list grid content--pad">
   <h2 class="type--header type--lg type--left type--full">
     By Femmes,
     <br />
     For Femmes
   </h2>
 
-  <h3 class="type--left type--full">
-    <a href="/collections/frontpage" class="link--lg type--header type--lg">Collection</a>
+  <h3 class="type--left type--full type--lg">
+    Collections:
   </h3>
 
+  <ul class="list--reset">
+    {% for collection in collections %}
+      <li class="type--left">
+        <a href="{{ collection.url }}" class="link--lg type--header type--lg">{{ collection.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 
   <div class="coming-soon">
+    {% comment %}
     <h4 class="type--left type--full">
       Lookbook coming soon...
     </h4>
+    {% endcomment %}
 
     <h5 class="type--left type--full">
       <a href="/pages/about" class="link--lg">Get in touch with us</a>
