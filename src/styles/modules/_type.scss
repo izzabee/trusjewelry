@@ -123,6 +123,23 @@ p {
   }
 }
 
+.type--md {
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 2.5rem;
+  // word-break: break-word;
+
+  @include breakpoint(md) {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 6rem;
+    line-height: 6.5rem;
+  }
+}
+
 .type--small {
   font-size: 0.75rem;
 }
@@ -161,8 +178,9 @@ p {
 .type--right { text-align: right; }
 .type--left { text-align: left; }
 
-.type--no-pad { margin: 0; }
+.type--no-pad { margin: 1rem 0; }
 .type--no-pad--btm { margin-bottom: 1rem; }
+.type--no-pad--top { margin-top: 1rem; }
 
 h1, h2, h3 {
   @extend .type--header;
