@@ -10,7 +10,7 @@
     "404": {
       "title": "404 Página não encontrada",
       "subtext_html":
-        "A página solicitada não existe. Clique <a href=\"/collections/femme\">aqui</a> para voltar para a loja."
+        "A página solicitada não existe. Clique <a href=\"/collections/all\">aqui</a> para voltar para a loja."
     },
     "password_page": {
       "opening_soon": "Abertura em breve",
@@ -104,7 +104,7 @@
       "empty": "Seu carrinho está vazio no momento.",
       "cookies_required": "Habilite os cookies para usar o carrinho de compras",
       "continue_browsing_html":
-        "Continue navegando <a href=\"/collections/femme\">aqui</a> .",
+        "Continue navegando <a href=\"/collections/all\">aqui</a> .",
       "item_quantity": "Quantidade de produtos",
       "savings": "Está poupando"
     },

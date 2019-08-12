@@ -13,7 +13,6 @@
       </ul>
     {% endunless %}
   {% endif %}
-
   {%- assign footer_linklist = section.settings.footer_linklist -%}
   {% if linklists[footer_linklist].links.size > 0 %}
     <ul>
@@ -23,23 +22,41 @@
     </ul>
   {% endif %}
 
-  <div class="footer__left">
-    <p>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. <small>{{ powered_by_link }}</small></p>
-  </div>
-
-  <div class="footer__right">
-    <ul class="social-sharing list--reset">
-      <li>
-        <a target="_blank" href="https://www.instagram.com/trusjewelry/" class="link--icon" rel="noopener noreferrer">
-          {% include 'icon-instagram' %}
-        </a>
-      </li>
-      <li>
-        <a target="_blank" href="https://www.facebook.com/trusjewelry" class="link--icon" rel="noopener noreferrer">
-          {% include 'icon-facebook' %}
-        </a>
-      </li>
+  <div class="grid grid--row footer__links">
+    <div class="footer__copyright">
+      <p class="type--no-pad">{{ shop.name | link_to: '/' }}</p>
+      <p class="type--no-pad">&copy; {{ 'layout.footer.copyright' | t }} {{ 'now' | date: "%Y" }}</p>
+      <p class="type--no-pad"><small>{{ powered_by_link }}</small></p>
+    </div>
+    <ul class="list--reset footer__pages">
+      <li><a class="link--lg" href="/">Home</a></li>
+      <li><a class="link--lg" href="/collections/all">Shop</a></li>
+      <li><a class="link--lg" href="/pages/about">About</a></li>
     </ul>
+    <ul class="list--reset footer__contact">
+      <li><a class="link--lg" href="/pages/about#contact">Contact</a></li>
+      <li><a class="link--lg" target="_blank" href="mailto:info@trusjewelry.com" rel="noopener noreferrer">Email</a></li>
+    </ul>
+    <div class="footer__social">
+      <p class="type--no-pad hidden-mobile">Social:</p>
+      <ul class="list--reset">
+        <li>
+          <a target="_blank" href="https://www.instagram.com/trusjewelry/" class="link--lg" rel="noopener noreferrer">
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/trusjewelry" class="link--lg" rel="noopener noreferrer">
+            Facebook
+          </a>
+        </li>
+      </ul>
+    </div>
 
+    <div class="footer__newsletter">
+      <p class="type--no-pad">Newsletter Signup</p>
+      {% include 'newsletter-form' %}
+    </div>
   </div>
+
 </footer>

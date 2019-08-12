@@ -15,7 +15,7 @@
     "url": "https://github.com/Shopify/skeleton-theme.git"
   },
   "devDependencies": {
-    "@shopify/slate-tools": "1.0.0-beta.14"
+    "@shopify/slate-tools": "^1.0.0-beta.15"
   },
   "scripts": {
     "start": "slate-tools start",
@@ -25,6 +25,10 @@
     "zip": "slate-tools build && slate-tools zip"
   },
   "dependencies": {
+    "@shopify/theme-a11y": "^2.0.1",
+    "@shopify/theme-cart": "^1.0.1",
+    "@shopify/theme-sections": "^2.0.0",
+    "@shopify/theme-variants": "^1.0.0-alpha.9",
     "update": "^0.7.4"
   }
 }

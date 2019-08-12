@@ -12,9 +12,12 @@ form {
     color: $black;
     font-family: $sanserif;
     font-weight: 300;
-    padding: 0.5rem;
+    padding: 0.66rem;
     width: 100%;
   }
+
+  textarea::placeholder { color: $black; }
+  input::placeholder { color: $black; }
 
   label {
     font-weight: 300;
@@ -58,29 +61,6 @@ select {
   h4 { margin: 0; }
 }
 
-.product-form {
-  align-items: flex-end;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.product-form__item {
-  margin-bottom: 10px;
-  margin-left: 5px;
-  width: 50%;
-
-  label {
-    display: block;
-    padding: 5px 0;
-  }
-
-  select {
-    display: block;
-    width: 100%;
-  }
-}
-
 .contact-form,
 .storefront-password-form,
 .form--search {
@@ -106,4 +86,66 @@ select {
   @include breakpoint(md) {
     .grid--half:first-of-type { padding-right: 1rem; }
   }
+}
+
+// newsletter form
+.newsletter-form #mc_embed_signup {
+  margin-top: 1rem;
+
+  input[type="submit"],
+  input {
+    background-color: transparent;
+    border-color: $white;
+    color: $white;
+  }
+
+  input::placeholder { color: $white; }
+
+  input[type="submit"]:hover {
+    border-color: $black;
+    color: $black;
+  }
+
+  .mc-field-group {
+    width: 100%;
+  }
+}
+
+#mc_embed_signup_scroll {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+
+#mc_embed_signup {
+  input[type="submit"]:hover {
+    background-color: transparent;
+    border-color: $peach;
+    color: $peach;
+    cursor: pointer;
+  }
+}
+
+.mc-field-group {
+  position: relative;
+
+  input { border-right: none; }
+
+  label { display: none; }
+
+  // label {
+  //   left: 0.66rem;
+  //   position: absolute;
+  //   top: 0.66rem;
+  //   transition: all 0.3s;
+  // }
+
+  // &:active,
+  // &:focus,
+  // &:focus-within {
+  //   label {
+  //     top: -1.66rem;
+  //   }
+  // }
 }

@@ -10,7 +10,7 @@
     "404": {
       "title": "404 Page Not Found",
       "subtext_html":
-        "The page you requested does not exist. Click <a href=\"/collections/femme\">here</a> to continue shopping."
+        "The page you requested does not exist. Click <a href=\"/collections/all\">here</a> to continue shopping."
     },
     "password_page": {
       "opening_soon": "Opening Soon",
@@ -101,7 +101,7 @@
       "empty": "Your cart is currently empty.",
       "cookies_required": "Enable cookies to use the shopping cart",
       "continue_browsing_html":
-        "<a class='button' href=\"/collections/femme\">Continue browsing</a>",
+        "<a class='button' href=\"/collections/all\">Continue browsing</a>",
       "item_quantity": "Item quantity",
       "savings": "You're saving"
     },

@@ -1,23 +1,30 @@
 {%- assign collection = collections.first -%}
 
-<section class="lg-text--list grid content--pad">
+<section class="lg-text--list grid">
   <h2 class="type--header type--lg type--left type--full">
-    By Femmes,
+    By and for,
     <br />
-    For Femmes
+    Women and Femmes
   </h2>
 </section>
-<!--
-<ul class="grid grid--images list--reset list--images">
-  <li class="grid--third js-fade-in"><img src="https://scontent-lga3-1.cdninstagram.com/vp/1f40ceceb30599ce81a1b64e61311f56/5C814AE9/t51.2885-15/sh0.08/e35/s640x640/30841940_158525051508370_4118868427068669952_n.jpg" alt=""></li>
-  <li class="grid--third js-fade-in"><img src="https://scontent-lga3-1.cdninstagram.com/vp/fff0811969e724c6c7a3ecb1212fb717/5C81A2A9/t51.2885-15/sh0.08/e35/s640x640/25037418_358207254646573_3387837793261584384_n.jpg" alt=""></li>
-  <li class="grid--third js-fade-in"><img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/IMG_0944.jpg?4115557476902509908" alt=""></li>
-  <li class="grid--third js-fade-in"><img src="https://scontent-lga3-1.cdninstagram.com/vp/fb31788cfca4b406535c58dd709b34b3/5C852706/t51.2885-15/sh0.08/e35/s640x640/30085922_377312972767140_4388355806458806272_n.jpg" alt=""></li>
-</ul>
- -->
 
-<section class="lg-text--list grid content--pad">
-  <h3 class="type--left type--full type--md">
+<ul class="grid grid--images list--reset">
+  <li class="grid--images__wrapper js-fade-in">
+    <img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/femme-rings.jpg?13626095406647771408" alt="Trus pinky rings, femme collection">
+    <img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/fornasetti-trus.jpg?9227005424408528773" alt="Trus pinky rings, femme collection on graphic background">
+  </li>
+  <li class="grid--images__wrapper grid--images__end js-fade-in">
+    <img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/IMG_1715.jpg?13528126290081013052" alt="Girl wearing Trus frida earring">
+    <img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/fingers.png?5482876702418825312" alt="Girls wearing Trus pinky rings, femme collection">
+  </li>
+  <li class="grid--images__wrapper js-fade-in">
+    <img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/IMG_1961.jpg?13054720584018282484" alt="Trus fine jewelry, Athena pinky ring, femme collection">
+    <img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/IMG_0077.JPG?18025734580885254697" alt="Trus fine jewelry, Juliet pinky ring, femme collection">
+  </li>
+</ul>
+
+<section class="lg-text--list grid">
+  <h3 class="type--left type--full type--header type--md type--no-pad">
     Collections&nbsp;&ndash;
   </h3>
 
@@ -25,33 +32,40 @@
     {% for collection in collections %}
       <li class="type--left link--grid">
         <h4 class="type--header link--grid__title">
-          <a href="{{ collection.url }}" class="type--md type--uppercase type--no-pad link--lg">{{ collection.title }}</a>
+          <a href="{{ collection.url }}" class="type--md type--uppercase type--sm-pad link--lg">{{ collection.title }}</a>
         </h4>
-        <span class="link--grid__links">
+        <span class="link--grid__links type--md-sm">
           <a href="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/trus-lookbook-{{ collection.title | downcase }}.pdf?880741757667951064" class="link--lg type--uppercase" target="_blank">View <br /> Lookbook</a>
         </span>
       </li>
     {% endfor %}
-
-    <li class="type--left link--grid">
-      <h4 class="type--header type--md type--uppercase type--no-pad link--grid__title">Form</h4>
-      <span class="link--grid__links">
-        <span class="type--uppercase">Coming </span>
-        <span class="type--uppercase">soon</span>
-        <!-- <a href="#" class="link--lg type--md type--uppercase">View</a> -->
-        <!-- <a href="#" class="link--lg type--md type--uppercase">Lookbook</a> -->
-      </span>
-    </li>
   </ul>
 
-  <div class="coming-soon"></div>
-
+   <a href="/collections/all" class="type--header type--lg type--left type--full margin--50 link--lg" title="Trus Femme Collection">Shop</a>
  </section>
 
+ <ul class="grid grid--images list--reset">
+   <li class="grid--images__wrapper grid--images__end js-fade-in">
+     <img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/bern.jpg?13058579549437701876" alt="">
+     <img src="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/izzie.jpg?7323202200517767024" alt="">
+   </li>
+ </ul>
+
+ <section class="lg-text--list grid">
+  <h3 class="type--left type--full type--header type--md type--no-pad">
+    Our Brand&nbsp;&ndash;
+  </h3>
+
+  <p class="type--left type--full type--md-sm type--sm-pad">
+    Get to know the founders of Trüs and what drives our brand.
+    <a class="link--lg link--inline" href="/pages/about">Read more.</a>
+  </p>
+</section>
+
+<!--
 <ul class="grid grid--row list--reset list--images">
   <li class="grid--third"><img src="https://scontent-lga3-1.cdninstagram.com/vp/1f40ceceb30599ce81a1b64e61311f56/5C814AE9/t51.2885-15/sh0.08/e35/s640x640/30841940_158525051508370_4118868427068669952_n.jpg" alt=""></li>
   <li class="grid--third"><img src="https://scontent-lga3-1.cdninstagram.com/vp/fff0811969e724c6c7a3ecb1212fb717/5C81A2A9/t51.2885-15/sh0.08/e35/s640x640/25037418_358207254646573_3387837793261584384_n.jpg" alt=""></li>
   <li class="grid--third"><img src="https://scontent-lga3-1.cdninstagram.com/vp/fb31788cfca4b406535c58dd709b34b3/5C852706/t51.2885-15/sh0.08/e35/s640x640/30085922_377312972767140_4388355806458806272_n.jpg" alt=""></li>
 </ul>
-
-
+ -->

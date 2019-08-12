@@ -24,7 +24,7 @@
     <p class="type--body">
     </p>
 
-    <div class="product__price form--small" data-price-wrapper>
+    <div class="product__price type--body form--small" data-price-wrapper>
       <span data-product-price>
         {{ current_variant.price | money }}
       </span>
@@ -39,7 +39,7 @@
       {% endif %}
     </div>
 
-    <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form">
+    <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form type--body">
       {% unless product.has_only_default_variant %}
         {% for option in product.options_with_values %}
           <div class="selector-wrapper js product-form__item">
@@ -50,7 +50,8 @@
             <select
               id="SingleOptionSelector-{{ forloop.index0 }}"
               data-single-option-selector
-              data-index="option{{ option.position }}">
+              data-index="option{{ option.position }}"
+              data-variant-label="{{ option.name | downcase }}">
               {% for value in option.values %}
                 <option
                   value="{{ value | escape }}"
@@ -59,7 +60,14 @@
                 </option>
               {% endfor %}
             </select>
+
           </div>
+
+          {% if option.name == 'Size' %}
+            <div class="product-form__guide">
+              <a href="https://cdn.shopify.com/s/files/1/0034/1573/6389/files/trus-pinky-ring-size-chart.pdf?7386921622896597090" class="link--inline" target="_blank" title="Trüs pinky ring size guide">View size guide</a>
+            </div>
+          {% endif %}
         {% endfor %}
       {% endunless %}
 
@@ -68,7 +76,7 @@
           <option
             {% if variant == current_variant %}selected="selected"{% endif %}
             {% unless variant.available %}disabled="disabled"{% endunless %}
-            value="{{ variant.id }}">
+            value="{{ variant.id }}" data-variant-price="{{ variant.price | money }}">
               {{ variant.title }}
           </option>
         {% endfor %}
@@ -165,10 +173,12 @@
 <div class="related-products">
   <h3 class="type--center">Related Products</h3>
   <ul class="grid grid--row list--reset related-products__list">
-  {% for product in collection.products %}
+  {% for prod in collection.products %}
+    {% if prod.id != product.id %}
     <li>
-      {% include 'product-thumb' with { product: product } %}
+      {% include 'product-thumb' with { product: prod } %}
     </li>
+    {% endif %}
   {% endfor %}
   </ul>
 </div>
@@ -187,4 +197,3 @@
     ]
   }
 {% endschema %}
-

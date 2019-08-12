@@ -5,43 +5,149 @@ import {
   removeClass
 } from '../modules/helpers'
 
+ import { register } from '@shopify/theme-sections';
+
+const props = {
+  cartCount: 0
+}
+
+const prodProps = {
+  quantity: null,
+  color: null,
+  // size: null
+}
+
 const els = {}
 
 const cacheEls = () => {
   els.mainImg = document.querySelector('.js-product-image')
   els.elsThumbs = document.querySelectorAll('.js-product-thumb')
   els.swapImgs = document.querySelectorAll('.js-product-images')
+  els.selectVariant = document.querySelectorAll('[data-single-option-selector]')
+  els.variant = document.querySelector('.product-form__variants')
+  els.price = document.querySelector('[data-product-price]')
+  els.submitForm = document.querySelector('.product-form')
+  els.cartIcon = document.querySelector('a.link--cart')
+  els.cartCount = els.cartIcon.querySelector('.link--cart__count')
 }
 
 const swapImages = (e) => {
   e.preventDefault()
-  let images = [...els.swapImgs]
   let wrapperId = e.target.parentElement.dataset.thumbnailId;
   // console.log(wrapperId)
 
   let parentElement = els.mainImg.querySelector('.responsive-image__wrapper');
   let oldElement = els.mainImg.querySelector('.responsive-image__image');
-  let newElement = getImage(images, wrapperId)
+  let newElement = getImage(wrapperId)
+  newElement.classList.remove('js-product-images')
+
+  // console.log(newElement, oldElement)
 
   parentElement.replaceChild(newElement, oldElement)
 }
 
-const getImage = (images, id) => {
-  for (var i = images.length - 1; i >= 0; i--) {
+const getImage = (id) => {
+  let images = [...els.swapImgs]
+  for (let i = images.length - 1; i >= 0; i--) {
     if (images[i].parentElement.dataset.imageId === id) {
       return images[i]
     }
   }
 }
 
-const initImages = () => {
+const ajaxRequest = (url, value, type) => {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open(type, url);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      props.cartCount++
+      submitFeedback()
+    } else if (xhr.status !== 200) {
+      console.warn('Request failed.  Returned status of ' + xhr.status);
+    }
+  };
+
+  xhr.send(encodeURI(value));
+}
+
+const submitFeedback = () => {
+  els.cartIcon.classList.add('updated')
+  els.cartCount.dataset.cartCount = props.cartCount
+  els.cartCount.innerText = `(${props.cartCount})`
+
+  if (els.cartIcon.classList.contains('updated')) {
+    setTimeout(() => { els.cartIcon.classList.remove('updated') }, 500)
+  }
+}
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  let form = e.target
+  let url = form.action
+  ajaxRequest(url, 'id=' + els.variant.value, 'POST')
+}
+
+const updateAddToCartState = (e) => {
+  const variant = e.currentTarget.value;
+  const varLabel = e.currentTarget.dataset.variantLabel;
+
+  if (variant) {
+    for (var i = els.variant.length - 1; i >= 0; i--) {
+      let value = els.variant[i]
+
+      if (value.label == variant) {
+        value.selected = true
+      } else if (els.selectVariant.length > 1) {
+        if (value.label.split(' / ').indexOf(variant) > -1) {
+          prodProps[varLabel] = variant
+
+          if (prodProps.quantity && prodProps.color) {
+            let selected = `${prodProps.quantity} / ${prodProps.color}`
+            if (value.label == selected) {
+              value.selected = true
+            }
+          } else {
+            value.selected = true
+          }
+        }
+      }
+    }
+
+    updatePriceInView()
+  }
+}
+
+const updatePriceInView = () => {
+  let value = els.variant[els.variant.selectedIndex];
+  if (value.dataset.variantPrice.length && value.dataset.variantPrice !== els.price.innerText) {
+    els.price.innerText = value.dataset.variantPrice
+  }
+}
+
+const initProduct = () => {
   cacheEls()
   if (els.mainImg) {
     addEvent(els.elsThumbs, 'click', swapImages)
   }
+
+  if (els.selectVariant) {
+    for (let i = els.selectVariant.length - 1; i >= 0; i--) {
+      els.selectVariant[i].addEventListener('change', updateAddToCartState)
+    }
+  }
+
+  props.cartCount = els.cartCount.dataset.cartCount
+
+  if (els.submitForm) {
+    els.submitForm.addEventListener('submit', handleSubmit)
+  }
 }
 
-document.addEventListener('DOMContentLoaded', initImages)
+document.addEventListener('DOMContentLoaded', initProduct)
+// export { initProduct }
 
 // /**
 //  * Product Template Script

@@ -16,8 +16,20 @@ p {
 }
 
 .link--inline {
-  text-decoration: underline;
+  // text-decoration: underline;
+  position: relative;
   transition: color 0.3s;
+
+  &:after {
+    background-color: $white;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transition: background-color 0.3s;
+  }
 
   a {
     transition: color 0.3s;
@@ -25,6 +37,8 @@ p {
 
   &:hover {
     color: $black;
+
+    &:after { background-color: $black; }
 
     a { color: $black; }
   }
@@ -127,7 +141,6 @@ p {
   font-size: 2rem;
   font-weight: 100;
   line-height: 2.5rem;
-  // word-break: break-word;
 
   @include breakpoint(md) {
     font-size: 3rem;
@@ -137,6 +150,22 @@ p {
   @include breakpoint(lg) {
     font-size: 6rem;
     line-height: 6.5rem;
+  }
+}
+
+.type--md-sm {
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 1rem;
+
+  @include breakpoint(md) {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 3rem;
+    line-height: 3rem;
   }
 }
 
@@ -153,7 +182,8 @@ p {
   line-height: 1.5rem;
 
   @include breakpoint(md) {
-    line-height: 1.6rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -178,9 +208,11 @@ p {
 .type--right { text-align: right; }
 .type--left { text-align: left; }
 
-.type--no-pad { margin: 1rem 0; }
+.type--no-pad { margin: 0; }
+.type--sm-pad { margin: 1rem 0; }
 .type--no-pad--btm { margin-bottom: 1rem; }
 .type--no-pad--top { margin-top: 1rem; }
+
 
 h1, h2, h3 {
   @extend .type--header;
